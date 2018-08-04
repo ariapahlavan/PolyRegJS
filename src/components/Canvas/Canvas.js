@@ -17,6 +17,8 @@ const drawDot = ctx => fg => (x, y) => {
 const clearCanvas = ctx => (w, h) => () => ctx.clearRect(0, 0, w, h);
 
 const drawPath = (ctx) => (color) => (xs, ys) => {
+  //credit: https://stackoverflow.com/questions/7054272/how-to-draw-smooth-curve-through-n-points-using-javascript-html5-canvas
+
   ctx.strokeStyle=color;
   // move to the first point
    ctx.moveTo(xs[0], ys[0]);
