@@ -1,7 +1,7 @@
 # Polynomial Regression Visualization
 PolyReg helps with visualization of how a polynomial regression model is trained using TensorFlow.
 
-![demo](https://imgur.com/c4L872h)
+![demo](https://i.imgur.com/c4L872h.gif)
 
 ## Development Tools:
 * [Git](http://git-scm.com/)
