@@ -15,15 +15,12 @@ class Regression {
     this.denormalizeX = denormalizeX;
     this.denormalizeY = denormalizeY;
 
-    this.line = {x1: 0, x2: 0, y1: 0, y2: 0};
-
     this.data = [];
     this.labels = [];
 
     this.vars = generateVars(deg);
 
-    this.learningRate = learningRate;
-    this.optimizer = tf.train.adam(this.learningRate);
+    this.optimizer = tf.train.adam(learningRate);
   }
 
   predict(xs) {

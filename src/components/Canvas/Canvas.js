@@ -22,7 +22,7 @@ const drawPath = (ctx) => (color) => (xs, ys) => {
   ctx.strokeStyle=color;
   // move to the first point
    ctx.moveTo(xs[0], ys[0]);
-   
+
    let i;
    for (i = 0; i < xs.length - 2; i ++) {
       var xc = (xs[i] + xs[i + 1]) / 2;
@@ -36,8 +36,11 @@ const drawPath = (ctx) => (color) => (xs, ys) => {
 
 
 const canvasOf = (canvas, fg='white', bg='black') => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
   const ctx = canvas.getContext("2d");
   const w = canvas.width, h = canvas.height;
+
   return {
     width: w,
     height: h,

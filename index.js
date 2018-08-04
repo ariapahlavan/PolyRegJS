@@ -11,9 +11,10 @@ const normalizeY = mapper(-1, 1)(h, 0);
 const denormalizeX = x => Math.floor(mapper(0, w)(-1, 1)(x));
 const denormalizeY = y => Math.floor(mapper(h, 0)(-1, 1)(y));
 
-const regression = new Regression(0.3, 5, denormalizeX, denormalizeY, canvas);
 
-setInterval(() => tf.tidy(() => regression.trainAndDraw()), 50);
+const regression = new Regression(0.3, 3, denormalizeX, denormalizeY, canvas);
+
+setInterval(() => tf.tidy(() => regression.trainAndDraw()), 25);
 
 window.addEventListener("click", event => {
     regression.pushSample(normalizeX(event.clientX),
