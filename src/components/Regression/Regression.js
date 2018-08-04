@@ -23,19 +23,15 @@ class Regression {
     this.vars = generateVars(deg);
 
     this.learningRate = learningRate;
-    this.optimizer = tf.train.sgd(this.learningRate);
+    this.optimizer = tf.train.adam(this.learningRate);
   }
 
   predict(xs) {
     const vars = this.vars;
-    if (vars.length === 0){
-      return;
-    }
 
     let curTf = vars[0];
-    for (var i = vars.length-1; i > 0; i--) {
+    for (var i = vars.length-1; i > 0; i--)
       curTf = tf.tensor1d(xs).pow(i).mul(vars[i]).add(curTf);
-    }
 
     return curTf;
   }
@@ -51,7 +47,7 @@ class Regression {
           () => this.loss(this.predict(this.data), tf.tensor1d(this.labels)));
 
       const xs = [];
-      for (var i = 0; i < 1.0; i+=0.1)
+      for (let i = -1.0; i <= 1.0; i+=0.1)
         xs.push(i);
 
       this.predict(xs)

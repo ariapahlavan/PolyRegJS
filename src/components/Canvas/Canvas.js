@@ -22,8 +22,7 @@ const drawPath = (ctx) => (color) => (xs, ys) => {
   ctx.strokeStyle=color;
   // move to the first point
    ctx.moveTo(xs[0], ys[0]);
-   console.log(xs, ys);
-
+   
    let i;
    for (i = 0; i < xs.length - 2; i ++) {
       var xc = (xs[i] + xs[i + 1]) / 2;
