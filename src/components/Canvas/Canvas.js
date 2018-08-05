@@ -37,7 +37,7 @@ const channel = (x) => {
   }
 }
 
-let R = channel(0.1), B = channel(0.5), G = channel(1);
+let R = channel(0.1), B = channel(0.3), G = channel(0.5);
 const drawPath = (ctx) => (color) => (xs, ys) => {
   ctx.strokeStyle=`rgba(${R()}, ${B()}, ${G()}, 1)`;
   ctx.lineWidth= 2;

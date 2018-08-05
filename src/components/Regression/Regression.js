@@ -36,7 +36,7 @@ class Regression {
     const control = {
       learningRate: 0.3,
       degree: 3,
-      optimizer: 'Adam'
+      optimizer: 'SGD'
     };
 
     this.weights = generateWights(control.degree+1);
@@ -62,7 +62,7 @@ class Regression {
        .name('Optimizer')
        .onChange(setOptimizer);
 
-    gui.close()
+    // gui.close()
   }
 
   predict(xs) {
