@@ -8,6 +8,7 @@ PolyReg helps with visualization of how a polynomial regression model is trained
 * [TensorFlow.js](https://js.tensorflow.org/)
 * [Node.js](https://nodejs.org/)
 * [Parcel](https://parceljs.org/)
+* [dat.GUI](https://github.com/dataarts/dat.gui)
 
 ## Give it a try:
 1. Clone this repo
