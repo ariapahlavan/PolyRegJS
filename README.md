@@ -14,8 +14,3 @@ PolyReg helps with visualization of how a polynomial regression model is trained
 1. Clone this repo
 2. Run `npm install`
 3. Run `npm start`
-
-
-__TODOS__
-- Increase training speed
-- Add UI components for tweaking parameters

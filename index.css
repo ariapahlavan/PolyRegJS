@@ -1,0 +1,11 @@
+canvas {
+  background-color: rgb(5, 31, 36);
+  background: radial-gradient(
+    rgb(5, 31, 36) 15%,
+    rgb(3, 25, 28) 80%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

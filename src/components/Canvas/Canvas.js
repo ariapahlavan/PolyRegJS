@@ -16,14 +16,35 @@ const drawDot = ctx => fg => (x, y) => {
 
 const clearCanvas = ctx => (w, h) => () => ctx.clearRect(0, 0, w, h);
 
-const drawPath = (ctx) => (color) => (xs, ys) => {
-  //credit: https://stackoverflow.com/questions/7054272/how-to-draw-smooth-curve-through-n-points-using-javascript-html5-canvas
+const random = (x=256) => Math.random() * x;
 
-  ctx.strokeStyle='rgba(200, 51, 256, 1)';
+const channel = (x) => {
+  let C = random();
+  let increasing = true;
+
+  return () => {
+    C += (increasing ? x : -x);
+
+    if (C >= 255) {
+      C = 255;
+      increasing = false;
+    } else if (C <= 0) {
+      C = 0;
+      increasing = true;
+    }
+
+    return C;
+  }
+}
+
+let R = channel(0.1), B = channel(0.5), G = channel(1);
+const drawPath = (ctx) => (color) => (xs, ys) => {
+  ctx.strokeStyle=`rgba(${R()}, ${B()}, ${G()}, 1)`;
   ctx.lineWidth= 2;
   // move to the first point
    ctx.moveTo(xs[0], ys[0]);
 
+   //credit: https://stackoverflow.com/questions/7054272/how-to-draw-smooth-curve-through-n-points-using-javascript-html5-canvas
    let i;
    for (i = 0; i < xs.length - 2; i ++) {
       var xc = (xs[i] + xs[i + 1]) / 2;

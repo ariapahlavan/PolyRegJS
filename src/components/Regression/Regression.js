@@ -35,11 +35,11 @@ class Regression {
 
     const control = {
       learningRate: 0.3,
-      degree: 4,
+      degree: 3,
       optimizer: 'Adam'
     };
 
-    this.weights = generateWights(control.degree);
+    this.weights = generateWights(control.degree+1);
     const setOptimizer =
       () => trainOptimizers[control.optimizer]()(control.learningRate);
     this.optimizer = setOptimizer();
@@ -50,12 +50,12 @@ class Regression {
        .name('Learning Rate')
        .onChange(() => this.optimizer = tf.train.adam(control.learningRate));
 
-    gui.add(control, 'degree', 2, 20)
+    gui.add(control, 'degree', 1, 20)
        .step(1)
        .name('Degree')
        .onChange(() => {
          disposeOfWeights(this.weights);
-         this.weights = generateWights(control.degree);
+         this.weights = generateWights(control.degree+1);
        });
 
     gui.add(control, 'optimizer', Object.keys(trainOptimizers))
