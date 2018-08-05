@@ -13,6 +13,7 @@
     "live-server": "^1.2.0"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "^0.12.4"
+    "@tensorflow/tfjs": "^0.12.4",
+    "dat.gui": "^0.7.2"
   }
 }
