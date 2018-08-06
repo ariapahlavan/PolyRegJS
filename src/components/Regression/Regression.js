@@ -106,4 +106,4 @@ class Regression {
   }
 }
 
-export default Regression;
+module.exports = Regression;
