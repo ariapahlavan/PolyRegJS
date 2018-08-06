@@ -1,12 +1,12 @@
 
-import {mapper} from './src/util/RangeMapper.js';
+import {mapper} from './RangeMapper.js';
 // const {mapper} = require('./src/util/RangeMapper');
-import {canvasById} from './src/components/Canvas/Canvas.js';
+import {canvasById} from './Canvas.js';
 // const {canvasById} = require('./src/components/Canvas/Canvas');
-import Regression from './src/components/Regression/Regression.js';
+import Regression from './Regression.js';
 // const Regression = require('./src/components/Regression/Regression');
 
-const dat = require('dat.gui');
+import dat from './dat.gui.min.js';
 
 const gui = new dat.GUI();
 
