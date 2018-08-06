@@ -6,7 +6,7 @@ import {canvasById} from './Canvas.js';
 import Regression from './Regression.js';
 // const Regression = require('./src/components/Regression/Regression');
 
-import dat from './dat.gui.min.js';
+// import {dat} from './dat.gui.min.js';
 
 const gui = new dat.GUI();
 
