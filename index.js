@@ -25,7 +25,7 @@ setInterval(() => tf.tidy(() => regression.trainAndDraw()), 0);
 const addPosition = e => regression.pushSample(normalizeX(e.clientX),
                                                normalizeY(e.clientY));
 
-window.addEventListener("click", addPosition, false);
+canvas.canvas().addEventListener("click", addPosition, false);
 
 canvas.canvas()
   .addEventListener('mousemove', e => {if (clicked) addPosition(e);}, false);
