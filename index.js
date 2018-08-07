@@ -33,3 +33,18 @@ canvas.canvas().addEventListener('mousedown', e => clicked = true);
 canvas.canvas().addEventListener('mouseup', e => clicked = false);
 canvas.canvas().addEventListener("click", addPosition);
 window.addEventListener('resize', canvas.resize);
+window.addEventListener('load', () => {
+  const instruction = document.getElementById('instruction');
+  setTimeout(() => {
+    let op = 1;
+    const timer = setInterval(() => {
+        if (op <= 0.025){
+            clearInterval(timer);
+            instruction.style.display = 'none';
+        }
+        instruction.style.opacity = op;
+        instruction.style.filter = 'alpha(opacity=' + op * 100 + ')';
+        op -= op * 0.1;
+    }, 50);
+  }, 2000);
+});
