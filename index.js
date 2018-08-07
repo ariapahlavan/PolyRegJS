@@ -10,10 +10,10 @@ const gui = new dat.GUI();
 const canvas = canvasById("myCanvas");
 const w = canvas.width, h = canvas.height;
 
-const normalizeX = mapper(-1, 1)(0, w);
-const normalizeY = mapper(-1, 1)(h, 0);
-const denormalizeX = x => Math.floor(mapper(0, w)(-1, 1)(x));
-const denormalizeY = y => Math.floor(mapper(h, 0)(-1, 1)(y));
+const normalizeX = x => mapper(-1, 1)(0, w())(x);
+const normalizeY = y => mapper(-1, 1)(h(), 0)(y);
+const denormalizeX = x => Math.floor(mapper(0, w())(-1, 1)(x));
+const denormalizeY = y => Math.floor(mapper(h(), 0)(-1, 1)(y));
 let clicked = false;
 const isClicked = () => clicked;
 
@@ -25,9 +25,9 @@ setInterval(() => tf.tidy(() => regression.trainAndDraw()), 0);
 const addPosition = e => regression.pushSample(normalizeX(e.clientX),
                                                normalizeY(e.clientY));
 
-canvas.canvas().addEventListener("click", addPosition, false);
-
 canvas.canvas()
-  .addEventListener('mousemove', e => {if (clicked) addPosition(e);}, false);
-canvas.canvas().addEventListener('mousedown', e => clicked = true, false);
-canvas.canvas().addEventListener('mouseup', e => clicked = false, false);
+  .addEventListener('mousemove', e => {if (clicked) addPosition(e);});
+canvas.canvas().addEventListener('mousedown', e => clicked = true);
+canvas.canvas().addEventListener('mouseup', e => clicked = false);
+canvas.canvas().addEventListener("click", addPosition);
+window.addEventListener('resize', canvas.resize);
