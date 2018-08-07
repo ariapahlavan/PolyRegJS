@@ -36,7 +36,12 @@ class Regression {
     const control = {
       learningRate: 0.3,
       degree: 3,
-      optimizer: 'SGD'
+      optimizer: 'SGD',
+      clearpoints: () => {
+        this.data = [];
+        this.labels = [];
+        this.canvas.clear();
+      }
     };
 
     this.weights = generateWights(control.degree+1);
@@ -62,7 +67,10 @@ class Regression {
        .name('Optimizer')
        .onChange(setOptimizer);
 
-    // gui.close()
+    gui.add(control, 'clearpoints')
+       .name('Remove Point');
+
+    gui.close();
   }
 
   predict(xs) {
