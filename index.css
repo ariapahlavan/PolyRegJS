@@ -4,8 +4,42 @@ canvas {
     rgb(5, 31, 36) 15%,
     rgb(3, 25, 28) 80%
   );
+
   position: absolute;
   top: 0;
   left: 0;
-  /* z-index: -1; */
+  z-index: 0;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+
+  cursor: default;
+  pointer-events: none;
+}
+
+#instruction {
+  font-size: 5em;
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 0 20px 0 0;
+}
+
+#author {
+  font-size: lighter 100%;
+
+  color: rgba(255, 255, 255, 0.2);
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  padding: 0 20px 0 0;
 }

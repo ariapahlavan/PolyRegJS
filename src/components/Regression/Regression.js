@@ -69,8 +69,6 @@ class Regression {
 
     gui.add(control, 'clearpoints')
        .name('Remove Point');
-
-    gui.close();
   }
 
   predict(xs) {
