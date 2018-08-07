@@ -14,7 +14,7 @@ const drawDot = ctx => fg => (x, y) => {
     ctx.fill();
 };
 
-const clearCanvas = ctx => (w, h) => () => ctx.clearRect(0, 0, w(), h()););
+const clearCanvas = ctx => (w, h) => () => ctx.clearRect(0, 0, w(), h());
 
 const random = (x=256) => Math.random() * x;
 
